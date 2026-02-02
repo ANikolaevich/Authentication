@@ -1,4 +1,11 @@
 public class Authentication {
+    /**
+     * The method verifies the authenticity of the login.
+     * If the login exists, it calls the password verification method.
+     * @param userName login.
+     * @param userPass password.
+     * @return true - if the data is correct. false - if the data is inconcrete.
+     */
     public static boolean loginVerification(String userName, String userPass) {
         boolean statusAuthentication;
         if (User.getUserList().containsKey(userName)) {
@@ -10,6 +17,13 @@ public class Authentication {
         return statusAuthentication;
     }
 
+    /**
+     * The method verifies that the password entered is correct.
+     * @param user user.
+     * @param userName user name.
+     * @param userPass password.
+     * @return true - if the data is correct. false - if the data is inconcrete.
+     */
     private static boolean authentication(User user, String userName, String userPass) {
         if (userName.equals(user.getUserName())
                 && userPass.equals(user.getPassword())) {
@@ -21,6 +35,9 @@ public class Authentication {
         }
     }
 
+    /**
+     * A message to the user in case of incorrect data entered.
+     */
     private static void messageToUser() {
         System.out.println("Access denied");
         System.out.println("Check the correctness of the login or password");

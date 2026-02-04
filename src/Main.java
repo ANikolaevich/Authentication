@@ -1,4 +1,4 @@
-private static HashMap<String, User> userList = new HashMap<>();
+
 Scanner scanner = new Scanner(System.in);
 
 void main() {
@@ -21,6 +21,7 @@ private boolean authentication(String enteredUserName) {
     }
     return false;
 }
+
 
 private static void createNewUser() {
     User user1 = new User();
